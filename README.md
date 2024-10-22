@@ -1,24 +1,13 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Routes
+GET /                            => home#index      (Show the home page view)
+GET /movies                      => movies#index    (Show all the movies)
+GET /movies/:id                  => movies#show     (Show an individual movie)
+GET /production_companies        => movies#index    (Show all the movies)
+GET /production_companies/:id    => movies#show     (Show an individual Production Company)
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Controllers
+HomeController                => index
+MoviesController              => index,show
+ProductionCompaniesController => index, show

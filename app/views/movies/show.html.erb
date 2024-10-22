@@ -3,6 +3,11 @@
   <strong>Description: </strong>
   <%= @movie.description %>
 </p>
+
+<progress class="progress is-primary, mt-5" value="<%= @movie.average_vote %>" max=10>
+  This movie got a rating of <%= @movie.average_vote %> out of 10.
+</progress>
+
 <p>
   <strong>Average Vote: </strong>
   <%= @movie.average_vote %>

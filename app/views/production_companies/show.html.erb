@@ -1,4 +1,8 @@
 <h2 class="title is-3"><%= @production_company.name %></h2>
+
+<p class="mb-5">This Production Company made <%= @production_company.movies.count %> of the top 100 movies</p>
+
+<h3 class="title is-5">Movies made by <%= @production_company.name %></h3>
 <ul>
   <% @production_company.movies.each do |movie| %>
     <li><%= link_to movie.title, movie %></li>

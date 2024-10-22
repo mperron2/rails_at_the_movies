@@ -1,2 +1,6 @@
-<h1>ProductionCompanies#show</h1>
-<p>Find me in app/views/production_companies/show.html.erb</p>
+<h2><%= @production_company.name %></h2>
+<ul>
+  <% @production_company.movies.each do |movie| %>
+    <li><%= link_to movie.title, movie %></li>
+  <% end %>
+</ul>

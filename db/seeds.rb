@@ -1,5 +1,7 @@
 require "csv"
 
+MovieGenre.delete_all
+Genre.delete_all
 Movie.delete_all
 ProductionCompany.delete_all
 
@@ -24,6 +26,13 @@ movies.each do |movie|
     )
     if !new_movie&.valid?
       puts "Unable to create movie: #{movie["original_title"]}"
+      next
+    end
+
+    genre_names = movie["genre"].split(", ")
+    genre_names.each do |genre_name|
+      genre = Genre.find_or_create_by(name: genre_name)
+      MovieGenre.create(movie: new_movie, genre: genre)
     end
   else
     puts "This Production Company has errors: #{movie["production_company"]}"
@@ -32,3 +41,5 @@ end
 
 puts "There are #{ProductionCompany.count} Production Companies"
 puts "There are #{Movie.count} Movies"
+puts "There are #{Genre.count} Genres"
+puts "There are #{MovieGenre.count} Movies Genres"

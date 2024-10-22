@@ -2,8 +2,8 @@
 
 one:
   movie: one
-  production_company: one
+  genre: one
 
 two:
   movie: two
-  production_company: two
+  genre: two

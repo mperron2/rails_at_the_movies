@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "home/index"
+  root to: "home#index"
   resources :movies, only: [ :index, :show ]
   resources :production_companies, only: [ :index, :show ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
